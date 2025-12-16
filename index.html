@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleshome.css') }}">
+</head>
+<body>
+    <div class="background"><div class="content-wrapper">
+        <div class="header">
+            <h1>Hello! Welcome To <br>AgroPredict 😊👨‍🌾</h1><br>
+            <p>Choose Any Option Below 👇</p>
+        </div>
+        <div class="options-container">
+            <a href="/crop" class="option-box">
+                <h2>Crop Recommendation 🌱</h2><br>
+                <p>Get The Suitable Crop You Want To Grow!</p>
+            </a>
+            <a href="/fertilizer" class="option-box">
+                <h2>Fertilizer Recommendation 🌰</h2><br>
+                <p>Know What Fertilizer is Best for Your Crop!</p>
+            </a>
+        </div></div>
+    </div>
+</body>
+</html>

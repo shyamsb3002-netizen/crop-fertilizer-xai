@@ -1,0 +1,153 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Fallback for background image */
+}
+
+.content-wrapper {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    max-width: 850px;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+  }
+
+.background {
+    background: url('pexels-ashutoshsonwani-1509607.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.header p {
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.options-container {
+    display: flex;
+    gap: 40px;
+}
+
+/*.option-box {
+    width: 250px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.option-box:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.option-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.option-box p {
+    font-size: 1rem;
+    text-align: center;
+}*/
+
+.option-box {
+    position: relative;
+    background-color: rgba(44, 224, 86, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    width: 280px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    gap: 60px;
+  }
+  
+  .option-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(124, 236, 171, 0.715);
+    transition: all 0.4s ease;
+    z-index: 0;
+  }
+  
+  .option-box:hover::before {
+    left: 0;
+  }
+  
+  .option-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .option-box h2,
+  .option-box p {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Crop Recommendation button - swipe from left to right */
+  .option-box:first-of-type::before {
+    left: -100%;
+    transition: left 0.4s ease;
+  }
+  
+  .option-box:first-of-type:hover::before {
+    left: 0;
+  }
+  
+  /* Fertilizer Recommendation button - swipe from right to left */
+  .option-box:last-of-type::before {
+    right: -100%;
+    left: auto;
+    transition: right 0.4s ease;
+  }
+  
+  .option-box:last-of-type:hover::before {
+    right: 0;
+  }
+  
+
+
+
+  
+  

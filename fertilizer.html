@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cropstyle.css') }}">
+</head>
+<body>
+    <div class="background"><div class="input-container">
+        <div class="header">
+            <h1>Fertilizer Prediction</h1><br>
+            <p>Enter the required details for prediction 👇🏻</p>
+        </div>
+        <div class="container">
+            <form action="/fertilizer/predict" method="POST">
+                <div class="form-group">
+                    <label for="soil">Soil Type:</label>
+                    <select id="soil" name="soil" required>
+                        <option value="" disabled selected>Select Soil Type</option>
+                        <option value="4">Sandy</option>
+                        <option value="1">Clayey</option>
+                        <option value="0">Black</option>
+                        <option value="2">Loamy</option>
+                        <option value="3">Red</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="croptype">Crop Type:</label>
+                    <select id="croptype" name="croptype" required>
+                        <option value="" disabled selected>Select Crop Type</option>
+                        <option value="10">Rice</option>
+                        <option value="9">Wheat</option>
+                        <option value="8">Tobacco</option>
+                        <option value="7">Sugarcane</option>
+                        <option value="14">Pulses</option>
+                        <option value="6">Pomegranate</option>
+                        <option value="5">Paddy</option>
+                        <option value="4">Oil Seeds</option>
+                        <option value="3">Millets</option>
+                        <option value="2">Ground Nuts</option>
+                        <option value="1">Cotton</option>
+                        <option value="11">Coffee</option>
+                        <option value="16">Watermelon</option>
+                        <option value="0">Barley</option>
+                        <option value="12">Kidney Beans</option>
+                        <option value="13">Orange</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nitrogen">Nitrogen (N):</label>
+                    <input type="number" id="nitrogen" name="nitrogen" placeholder="Enter nitrogen content" required>
+                </div>
+                <div class="form-group">
+                    <label for="phosphorus">Phosphorus (P):</label>
+                    <input type="number" id="phosphorus" name="phosphorus" placeholder="Enter phosphorus content" required>
+                </div>
+                <div class="form-group">
+                    <label for="potassium">Potassium (K):</label>
+                    <input type="number" id="potassium" name="potassium" placeholder="Enter potassium content" required>
+                </div>
+                <div class="form-group">
+                    <label for="Moisture">Moisture:</label>
+                    <input type="number" id="Moisture" name="Moisture" placeholder="Enter Moisture" required>
+                </div>
+                <div class="form-group">
+                    <label for="temperature">Temperature (°C):</label>
+                    <input type="number" id="temperature" name="temperature" placeholder="Enter temperature" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="humidity">Humidity (%):</label>
+                    <input type="number" id="humidity" name="humidity" placeholder="Enter humidity" step="0.1" required>
+                </div>
+                <button type="submit">🌰 Predict Fertilizer 🌰</button>
+            </form>
+        </div>
+    </div></div>
+</body>
+</html>

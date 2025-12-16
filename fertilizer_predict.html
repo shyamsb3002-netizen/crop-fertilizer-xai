@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Prediction</title>
+    <style>
+        /* Prevent scroll and white borders */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Center the content vertically & horizontally */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Full-screen background with optional blur */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-image: url('../static/pexels-ashutoshsonwani-1509607.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* Result box styling */
+.result {
+    text-align: center;
+    background-color: rgba(44, 43, 43, 0.737);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    width: 80%;
+    max-width: 600px;
+    z-index: 1;
+}
+
+.result h1 {
+    margin-bottom: 20px;
+    color: #ff9800;
+}
+
+.result p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Confidence text */
+.confidence {
+    font-size: 16px;
+    color: #90ee90;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Explanation box styling */
+.explanation {
+    margin-top: 30px;
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.explanation p {
+    margin: 5px 0;
+}
+
+/* General heading and paragraph styling */
+h1 {
+    color: #ff9800;
+}
+
+p {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Graph styling */
+.graph-container {
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="result">
+            <h1>Fertilizer Prediction</h1>
+            <p style="font-size: 24px; font-weight: bold;">{{ prediction_text }}</p>
+            <div class="confidence">
+                <p style="color: #90ee90;">{{ confidence_score }}</p>
+            </div>
+            <div class="explanation">
+                <h3 style="color: lightcyan">Explanation of Prediction:</h3>
+                <!--<div>{{ explanation_text|safe }}</div>-->
+                <p><strong>{{ explanation_sentence }}</strong></p>
+            </div>
+            <div class="graph-container">
+                <h3 style="color: lightcyan">Feature Importance Visualization</h3>
+                <img src="data:image/png;base64,{{ img_data }}" alt="Feature Importance">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
