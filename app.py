@@ -224,5 +224,8 @@ def predict_fertilizer():
                        img_data=img_base64)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
+
+
